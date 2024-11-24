@@ -9,6 +9,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as dotenv from 'dotenv';
 import { handleTmdbSearch } from './server/tmdb-search-handler';
+import { handlePing } from './server/ping-handler';
 dotenv.config();
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
@@ -29,6 +30,7 @@ const angularApp = new AngularNodeAppEngine();
  * ```
  */
 app.get('/api/search', handleTmdbSearch);
+app.get('/api/ping', handlePing);
 
 /**
  * Serve static files from /browser
