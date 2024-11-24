@@ -24,7 +24,7 @@ const UI_IMPORTS = [
   selector: 'tss-tv-command',
   styles: [``],
   template: `
-    <brn-cmd hlm>
+    <brn-cmd hlm class="sm:w-96">
       <hlm-cmd-input-wrapper>
         <hlm-icon name="lucideSearch" />
         <input
@@ -32,12 +32,10 @@ const UI_IMPORTS = [
           brnCmdInput
           hlm
           [formControl]="searchFormControl"
-          (blur)="focused = false"
-          (focus)="focused = true"
         />
       </hlm-cmd-input-wrapper>
 
-      @if(data && searchFormControl.value && focused){ @if(data.length === 0 ){
+      @if(data && searchFormControl.value){ @if(data.length === 0 ){
       <div hlmCmdEmpty>No results found.</div>
       } @else {
       <brn-cmd-list hlm>
@@ -70,7 +68,6 @@ const UI_IMPORTS = [
 })
 export class TvCommandComponent {
   @Input() searchFormControl!: FormControl;
-  @Input() focused!: boolean;
   @Input() data!: TV[] | null;
 
   @Output() itemClick = new EventEmitter<TV>();

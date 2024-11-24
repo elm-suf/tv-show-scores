@@ -24,6 +24,9 @@
           document.documentElement.classList.add("dark");
           localStorage.setItem("theme", "dark");
         }
+      } else if (!("theme" in localStorage)) {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
       } else {
         // else if we have access to the document and the element
         // we remove the dark class to the html element and
