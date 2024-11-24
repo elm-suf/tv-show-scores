@@ -1,3 +1,3 @@
-export default import("../dist/tv-show-scores/server/server.mjs").then(
-  (module) => module.app()
-);
+const server = import('../dist/tv-show-scores/server/server.mjs');
+
+module.exports = server.app;
