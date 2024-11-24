@@ -1,3 +1,6 @@
-const server = import('../dist/tv-show-scores/server/server.mjs');
-
-module.exports = server.app;
+async function loadServer() {
+    const serverModule = await import('../dist/apps/tv-show-scores/server/server.mjs');
+    return serverModule.app;
+  }
+  
+  export default loadServer().then(app => app());
