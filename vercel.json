@@ -1,4 +1,5 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "public": true,
   "name": "tv-show-scores",
@@ -11,7 +12,7 @@
   ],
   "functions": {
     "api/index.js": {
-      "includeFiles": "dist/tv-show-scores/**"
+      "includeFiles": "dist/tv-show-scores/browser/**"
     }
   }
 }
