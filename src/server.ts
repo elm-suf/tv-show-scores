@@ -8,7 +8,7 @@ import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as dotenv from 'dotenv';
-import { handleTmdbSearch } from './api/tmdb-search-handler';
+import { handleTmdbSearch } from '../api/tmdb-search-handler';
 dotenv.config();
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
