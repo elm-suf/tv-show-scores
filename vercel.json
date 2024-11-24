@@ -2,6 +2,7 @@
   "version": 2,
   "public": true,
   "name": "tv-show-scores",
+  "devCommand": "npm run serve:ssr:tv-show-scores",
   "rewrites": [
     {
       "source": "/(.*)",
