@@ -1,18 +1,13 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "version": 2,
-  "public": true,
   "name": "tv-show-scores",
-  "devCommand": "npm run serve:ssr:tv-show-scores",
-  "rewrites": [
+  "builds": [
+    { "src": "dist/tv-show-scores/browser/**/*", "use": "@vercel/static" },
     {
-      "source": "/(.*)",
-      "destination": "/api"
+      "src": "dist/tv-show-scores/server/main.server.mjs",
+      "use": "@vercel/node"
     }
   ],
-  "functions": {
-    "api/index.js": {
-      "includeFiles": "dist/tv-show-scores/browser/**"
-    }
-  }
+  "routes": [
+    { "src": "/(.*)", "dest": "dist/tv-show-scores/server/main.server.mjs" }
+  ]
 }
