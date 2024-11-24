@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "public": true,
+  "name": "tv-show-scores",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api"
+    }
+  ],
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "dist/tv-show-scores/**"
+    }
+  }
+}
